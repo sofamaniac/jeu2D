@@ -1,0 +1,28 @@
+Fcihier définissant les caractériqtiques du jeu 2D en cours de développement.
+Ce fichier sera supprimé à la fin du développement, ainsi que tout autre fichier ne servant pas le jeu
+
+Histoire :
+	-un héroine amoureuse (d'une pricesse) / prince, celle-ci/celui-ci se fait enlever par le grand méchant et il faut le(la) sauver
+
+Le héro :
+	- (homme) / femme
+	- chevalier / (paysan)
+	- arme : pelle, (épee), lance, faux, rateau, ...
+	- 6 1/2 coeurs -> 3 coeurs
+	- 3 points de mana permettant une attaque spéciale
+
+La Victime :
+	-...
+
+Le Grand Méchant :
+	-une moustache de méchant
+	-un monocle
+	-un sorcier maléfique ?
+	-un 'mad scientist'
+	-la soeur de la princesse amoureuse du prince avec un monocle
+
+Univers :
+	- steam punk
+	- (médieval)
+
+Jeu : Kidnap The Princess

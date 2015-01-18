@@ -1,0 +1,71 @@
+TODO : voir le reste du fichier
+- Fonction pour l'affichage et les menus adaptables et REUTILISABLES
+- Systeme d'encodage des niveaux
+- Trouver des textures (voir la communauté de game maker)
+- Créer les niveaux
+- Créer les ennemies
+- utiliser le multi threading
+- controle : flèches / zqsd
+
+-découpage programme :
+	-fichier jeu.py : fonction servant le jeu a proprement parler (donc la partie où l'on est dans le niveaux)
+	-fichier
+
+-main menu:
+	-start game:
+		-start a new game
+		-continue a game
+	-option
+		-volume son
+		-volume music
+		-difficulty
+	-quit
+
+Encodage levels :
+
+	-objet level:
+		-vars
+			-num level
+			-background
+			-music
+			-liste des images utilisées et un id corrsepondant
+			-dictonnaire : {pos tableau ((0,0) = point de départ) : tableau en question sous forme de liste contenant les id des images}
+			-dictionnaire : pos ennemie[tab][pos_in_tab](en case) : type d'ennemie
+			-current_tab
+
+		-methodes
+		    -chargement
+		    -
+
+Entities :
+
+		- Joueur :
+			-vars
+				-images pour l'animation
+				-point de vies
+				-point de mana
+				-point de damage
+				-point de damage spéc
+				-anim attaque/ attaque spéciale
+				-sons
+
+			-methodes
+				-deplacement
+				-attaque
+				-attaque spéciale
+
+		-Ennemies :
+			-vars
+				-images pour l'animation
+				-zone de déplacement
+				-rayon d'action (rayon ou le joueur est visible)
+				-point de vie
+				-sons
+				(-loot) peut etre défini a la mort de l'ennemie dans la méthode looting
+
+			-méthode
+				-deplacement
+				-attaque
+				-looting
+
+		-Boss ?
