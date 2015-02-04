@@ -61,6 +61,6 @@ def jeu():
 
 			player.animation.pause()
 			player.saut.pause()
-			#faire pareil avec le reste des ennemies
+			#il n'est pas necessaire de le faire avec tous les ennemies
 
 			graphics.scroll(globals.niveau.current_tab, globals.niveau.tab[1][0])#todo faire la gestion du tableau suivant

@@ -9,10 +9,10 @@ __maintainer__ = 'Antoine Grimod'
 __email__ = ''
 __status__ = 'Production'
 
-#toutes le variables seront initialisees dans un autre fichier
-
 taille_fenetre = []
 taille_tab = 50  # nb de case par tableau
+
+option = {}  # contiendra les reglages
 
 #dico contenant les images et les sons
 dico_images = {}

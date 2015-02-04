@@ -10,8 +10,10 @@ __maintainer__ = 'Antoine Grimod'
 __email__ = 'vivalgrim@gmail.com'
 __status__ = 'Production'
 
-
 import pygame
+
+from threading import Thread
+from math import fabs
 
 import globals
 
@@ -19,7 +21,6 @@ pygame.init()
 
 
 def load_image(path):
-
 	image = ""
 	try:
 		image = pygame.image.load(path).convert_alpha()
@@ -30,7 +31,6 @@ def load_image(path):
 
 
 def load_sound(path):
-
 	son = ""
 	try:
 		son = pygame.mixer.Sound(path)
@@ -41,7 +41,6 @@ def load_sound(path):
 
 
 def load_music(path):
-
 	music = ""
 	try:
 		music = pygame.mixer.music.load(path)
@@ -52,7 +51,6 @@ def load_music(path):
 
 
 class Fenetre:
-
 	def __init__(self, titre, logo, taille=(400, 400)):
 
 		self.fenetre = pygame.display.set_mode([taille[0], taille[1]])
@@ -65,14 +63,12 @@ class Fenetre:
 		for picture in elements:
 
 			for pos in position:
-
 				self.fenetre.blit(picture, pos)
 
 		pygame.display.flip()
 
 
 def create_subsurface(surface, horizontale, vertice):
-
 	width = surface.get_width() / horizontale
 	height = surface.get_height / vertice
 
@@ -85,14 +81,42 @@ def create_subsurface(surface, horizontale, vertice):
 	return list_images
 
 
-def scroll(current_tab, next_tab):
+def scroll(current_tab, next_tab, decalage=(2, 0)):
 
 	liste = current_tab + next_tab  # on creer une liste qui contient toutes les images a afficher
 
-	decalage = 2
+	tours_de_boucle = 0
 
-	tours_de_boucle = current_tab[0][0].get_width() / decalage * globals.taille_tab
+	if decalage[0] != 0:
+		tours_de_boucle = current_tab[0][0].get_width() / fabs(decalage[0]) * globals.taille_tab
 
-	for image in range(tours_de_boucle):
+	elif decalage[1] != 0:
+		tours_de_boucle = current_tab[0][0].get_hight() / fabs(decalage[1]) * globals.taille_tab
+
+	for tour in range(tours_de_boucle):
+		for image in len(liste[0]):
+			liste[image]
 
 
+class Button(Thread):
+	def __init__(self, images, func_exe, pos):
+		self.images = images
+		self.current_image = images[0]
+		self.func = func_exe
+		self.pos = pos
+		Thread.__init__(self)
+
+	def run(self):
+
+		while True:
+
+			pygame.time.Clock.tick(60)
+			pos_mouse = pygame.mouse.get_pos()
+
+			if pos_mouse in self.current_image.get_rect():
+				self.current_image = self.images[1]
+
+				if pygame.mouse.get_pressed()[0]:
+					self.current_image = self.images[2]
+					self.func()
+					self.current_image = self.images[0]

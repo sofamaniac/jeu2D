@@ -153,35 +153,21 @@ class Saut(Thread):
 
 			self.v_y += self.g
 
-
 			#on detecte la collision avec un plafond le reste des collisions se fait dans la methode deplacer du joueur
 			if (self.entity.position[1] + self.v_y) % globals.taille_case == 0:
 				if self.entity.position in pos_murs:
+					#si l'on chute c'est le sol, sinon c'est le plafond
 					if self.v_y > 0:
 						break
+
+					else:
+						self.v_y = 0
 
 		self.v_y = self.v_saut
 
 
-class Niveau:
+class Plateforme:
 
-	def __init__(self, num, background, music, dico_images, dico_tab, dico_ennemies):
-
-		#contient le numero du level et son world (si j'en fais :D)
-		self.num_level = num
-
-		#caracteristique du level
-		self.background = background
-		self.music = music
-
-		#contient les ids et les images correspondantes
-		self.dico_images = dico_images
-
-		#contient les differents tableau et leur position dans le niveau
-		self.dico_tab = dico_tab
-
-		#cotnient les ennemies par tableau et leur position dans ce dernier
-		#ils seront inclut plus tard dans dico tab
-		self.dico_ennemies = dico_ennemies
-
-		self.current_tab = [0,0] #contient la key du tableau courant
+	def __init__(self):
+		#todo : creer les plateformes
+		return

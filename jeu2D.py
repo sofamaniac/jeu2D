@@ -27,7 +27,7 @@ list_image = os.listdir("img")
 globals.dico_images = {}
 
 for path in list_image:
-	globals.dico_images[path[:-4]] = graphics.load_image("img/" + path)  # on retire l'extansion de la clef dans le dictionnaire
+	globals.dico_images[path[:-4]] = graphics.load_image("img/" + path)  # on retire l'extension dans le dictionnaire
 
 list_music = os.listdir("music")
 dico_music = {}
@@ -41,4 +41,4 @@ globals.dico_sound = {}
 for path in list_music:
 	globals.dico_sound[path[:-4]] = graphics.load_sound("sound/" + path)
 
-#Todo : lancer le menu principal
+#Todo : lancer le menu principal, creer les menus
