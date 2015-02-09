@@ -73,7 +73,7 @@ class Entity:
 		#verifie la presence de sol sous les pieds du joueur
 		sol = False
 
-		for keys in self.images.get_keys():
+		for keys in niveau.get_keys():
 			if pos[1] == keys[1]:
 				sol = True
 
