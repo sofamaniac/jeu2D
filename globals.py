@@ -10,7 +10,7 @@ __email__ = ''
 __status__ = 'Production'
 
 taille_fenetre = []
-taille_tab = 50  # nb de case par tableau
+taille_tab = (15, 10)  # nb de case par tableau
 
 option = {}  # contiendra les reglages
 
@@ -24,5 +24,5 @@ fenetre = ""  # contiendra la fenetre
 
 joueur = ""  # contiendra le joueur
 
-taille_case = 10  # taile des case en px
+taille_case = 40  # taile des case en px
 g = 9  # vitesse d'acceleration en px

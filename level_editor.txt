@@ -1,0 +1,7 @@
+Controls only for Azerty:
+
+    - Blocs : 1-0
+
+    - Background : numpad
+
+    - Music : w-n

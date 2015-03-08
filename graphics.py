@@ -51,12 +51,13 @@ def load_music(path):
 
 
 class Fenetre:
-	def __init__(self, titre, logo, taille=(400, 400)):
+	def __init__(self, titre, logo, taille=(600, 400)):
 
 		self.fenetre = pygame.display.set_mode([taille[0], taille[1]])
 
 		pygame.display.set_caption(titre)
-		pygame.display.set_icon(logo)
+		if logo:
+			pygame.display.set_icon(logo)
 
 	def update(self, elements, position):
 
@@ -95,7 +96,7 @@ def scroll(current_tab, next_tab, decalage=(2, 0)):
 
 	for tour in range(tours_de_boucle):
 		for image in len(liste[0]):
-			liste[image]
+			liste[image]  # todo : a completer
 
 
 class Button(Thread):

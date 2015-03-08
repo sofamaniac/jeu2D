@@ -73,7 +73,7 @@ class Entity:
 		#verifie la presence de sol sous les pieds du joueur
 		sol = False
 
-		for keys in niveau.get_keys():
+		for keys in niveau.current_tab.get_keys():
 			if pos[1] == keys[1]:
 				sol = True
 
@@ -141,7 +141,7 @@ class Saut(Thread):
 
 		pos_murs = []  # liste contenant les pos y des sols plafonds et murs
 
-		for key in niveau.get_keys():
+		for key in niveau.current_tab.get_keys():
 			#pour obtenir les coords reelles des plafonds on multiplie par la taille des cases
 			pos_murs.append(key[1]*globals.taille_case)
 
@@ -169,5 +169,5 @@ class Saut(Thread):
 class Plateforme:
 
 	def __init__(self):
-		#todo : creer les plateformes
+		#todo : creer les plateformes bougeante ou non (il suffit de declarer un mouvement null)
 		return
