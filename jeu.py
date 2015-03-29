@@ -10,12 +10,14 @@ __maintainer__ = 'Antoine Grimod'
 __email__ = 'vivalgrim@gmail.com'
 __status__ = 'Production'
 
-import pygame
-
-import entity, graphics, globals
-
-from pygame.locals import *
 from sys import exit
+
+import pygame
+from pygame.locals import *
+
+import objects
+import graphics
+import globals
 
 
 def jeu():
