@@ -26,3 +26,8 @@ joueur = ""  # contiendra le joueur
 
 taille_case = 40  # taile des case en px
 g = 9  # vitesse d'acceleration en px
+
+
+#======Definition des entites principales======#
+
+player = 0

@@ -20,7 +20,7 @@ import graphics
 import globals
 
 
-def jeu():
+def jeu(level):
 
 	player = entity.Entity()  # todo : mettre args pour creation joueur
 
